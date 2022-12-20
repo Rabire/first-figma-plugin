@@ -1,19 +1,38 @@
-<h2>Rectangle Creator</h2>
-<p>Count: <input id="count" value="5" /></p>
-<button id="create">Create</button>
-<button id="cancel">Cancel</button>
+<style>
+  input {
+    display: bloc;
+  }
+</style>
 
-<script>
-  document.getElementById("create").onclick = () => {
-    const textbox = document.getElementById("count");
-    const count = parseInt(textbox.value, 10);
-    parent.postMessage(
-      { pluginMessage: { type: "create-rectangles", count } },
-      "*"
-    );
-  };
+<h1>Rabire Plugin</h1>
 
-  document.getElementById("cancel").onclick = () => {
-    parent.postMessage({ pluginMessage: { type: "cancel" } }, "*");
-  };
-</script>
+<div>
+  <label for="username">Username</label>
+  <input type="text" />
+
+  <label for="name">Name</label>
+  <input type="text" />
+
+  <label for="description">Description</label>
+  <textarea id="description" rows="5"></textarea>
+</div>
+
+<div>
+  <input type="checkbox" id="dark-mode-on" />
+  <label for="dark-mode-on">Dark Mode</label>
+</div>
+
+<div>
+  <input id="radioButton1" name="variantGroup" type="radio" />
+  <label for="radioButton1">No Image</label>
+
+  <input id="radioButton2" name="variantGroup" type="radio" />
+  <label for="radioButton2">Single Image</label>
+
+  <input id="radioButton3" name="variantGroup" type="radio" />
+  <label for="radioButton3">Carousel</label>
+</div>
+
+<div>
+  <button class="button button--primary">Submit</button>
+</div>
