@@ -1,20 +1,25 @@
 <style>
-  input {
-    display: bloc;
+  body {
+    font-family: "Inter";
+    background-color: pink;
+  }
+
+  input[type="text"] {
+    display: block;
   }
 </style>
 
-<h1>Rabire Plugin</h1>
+<h1>Card Creator Plugin</h1>
 
 <div>
   <label for="username">Username</label>
-  <input type="text" />
+  <input type="text" value="your username" id="username" />
 
   <label for="name">Name</label>
-  <input type="text" />
+  <input type="text" value="your name" id="name" />
 
   <label for="description">Description</label>
-  <textarea id="description" rows="5"></textarea>
+  <textarea id="description" rows="5" value="your description"></textarea>
 </div>
 
 <div>
