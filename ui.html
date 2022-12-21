@@ -28,16 +28,41 @@
 </div>
 
 <div>
-  <input id="radioButton1" name="variantGroup" type="radio" />
+  <input id="radioButton1" name="variantGroup" type="radio" value="1" />
   <label for="radioButton1">No Image</label>
 
-  <input id="radioButton2" name="variantGroup" type="radio" />
+  <input id="radioButton2" name="variantGroup" type="radio" value="2" />
   <label for="radioButton2">Single Image</label>
 
-  <input id="radioButton3" name="variantGroup" type="radio" />
+  <input id="radioButton3" name="variantGroup" type="radio" value="3" />
   <label for="radioButton3">Carousel</label>
 </div>
 
 <div>
-  <button class="button button--primary">Submit</button>
+  <button class="button button--primary" id="submit-post">Submit</button>
 </div>
+
+<script>
+  document.getElementById("submit-post").onclick = () => {
+    const name = document.getElementById("name").value;
+    const username = document.getElementById("username").value;
+    const description = document.getElementById("description").value;
+    const darkModeSate = document.getElementById("dark-mode-on").checked;
+    const imageVariant = document.querySelector(
+      'input[name="variantGroup"]:checked'
+    ).value;
+
+    parent.postMessage(
+      {
+        pluginMessage: {
+          name,
+          username,
+          description,
+          darkModeSate,
+          imageVariant,
+        },
+      },
+      "*"
+    );
+  };
+</script>
